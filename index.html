@@ -212,23 +212,117 @@
     "Exceptional quality for the price—rich colors, strong seams, and zero color bleeding."
   ];
 
-  const closings = [
-    "Highly recommended for anyone shopping for women's clothing in Pondy Bazaar, Chennai!",
-    "Will definitely visit Sri Chintamani women's clothing shop at Pondy Bazaar, Chennai again!",
-    "A 10/10 store for women's ethnic wear in T. Nagar, Chennai!",
-    "Definitely coming back again with friends and family for all our pure cotton clothing needs!",
-    "A must-visit spot for women's traditional and ethnic wear at Pondy Bazaar, Chennai!",
-    "Hands down one of the best shopping spots for pure cotton collections in T. Nagar!",
-    "Easily the best women's clothing shop in Pondy Bazaar for quality and variety.",
-    "A top recommendation for authentic cotton ethnic wear in T. Nagar, Chennai!",
-    "10 out of 10 experience—my go-to women's wear store at Pondy Bazaar from now on!",
-    "Highly recommend checking out Sri Chintamani in Pondy Bazaar if you love high-quality fabrics!",
-    "Without a doubt, one of the finest ladies' clothing stores in T. Nagar, Chennai.",
-    "A complete 10/10 shopping destination for pure cotton sarees and dress materials in Pondy Bazaar!",
-    "Super happy with my purchase—definitely a top-rated women's clothing store in Chennai!",
-    "If you are looking for genuine pure cotton ethnic wear in T. Nagar, this is the place to visit!",
-    "Overall a fantastic 10/10 store for ladies' fashion in Pondy Bazaar, Chennai!"
-  ];
+   const categoryClosings = {
+    "sarees": [
+      "Will definitely visit again for their amazing saree collection!",
+      "A 10/10 spot in Pondy Bazaar if you love authentic pure cotton sarees.",
+      "Sri Chintamani is officially my top choice for lightweight, comfortable sarees in Chennai.",
+      "Definitely coming back with friends to check out more of their saree varieties!",
+      "A must-visit store in T. Nagar for daily wear and traditional sarees.",
+      "Highly recommended for anyone looking for durable and elegant cotton sarees!",
+      "10 out of 10 experience—I will definitely be shopping here again for sarees.",
+      "Super happy with my saree purchase—hands down one of the best shops in Pondy Bazaar!",
+      "If you appreciate authentic weaves and soft drapes, this store is a must-visit.",
+      "Will certainly return to Sri Chintamani for my next festive and daily saree shopping!"
+    ],
+    "unstitched-materials": [
+      "Will definitely visit again for their premium dress materials and suit sets!",
+      "Sri Chintamani is my absolute favorite store in Pondy Bazaar for unstitched cotton suits.",
+      "10 out of 10 recommendation for anyone looking for quality fabrics to custom-tailor!",
+      "Definitely coming back to pick up more unstitched dress materials for the season.",
+      "A complete 10/10 shopping experience for pure cotton salwar materials in T. Nagar.",
+      "Super satisfied with the fabric quality—will certainly recommend Sri Chintamani to family!",
+      "Hands down the best place in Pondy Bazaar for soft, non-fading dress materials.",
+      "I'll definitely be back soon to browse through their new suit material arrivals!",
+      "Highly recommended if you want durable, breathable unstitched cotton fabrics in Chennai.",
+      "Easily one of my favorite textile shops in T. Nagar for daily and festive dress sets!"
+    ],
+    "kurtis-sets": [
+      "Sri Chintamani is now my go-to store in Pondy Bazaar for readymade kurti sets!",
+      "Will definitely visit again to check out their latest ethnic wear collections.",
+      "10 out of 10 experience—perfect fit and super soft fabrics every single time!",
+      "Definitely my top recommendation in T. Nagar for comfortable, stylish office kurtis.",
+      "Highly recommended for anyone shopping for trendy ready-to-wear cotton suits in Chennai!",
+      "A fantastic store with great value—I'll be back for more kurti sets very soon.",
+      "Super happy with the comfort and fitting—will definitely be shopping here again!",
+      "Hands down one of the best boutiques in Pondy Bazaar for ladies' daily wear kurtis.",
+      "A complete 10/10 destination for ready-made cotton ethnic wear!",
+      "Will definitely bring my family along on my next visit for kurti shopping!"
+    ],
+    "bottom-wear": [
+      "Will definitely visit again whenever I need well-fitted, durable cotton bottom wear!",
+      "Sri Chintamani is easily my top recommendation in Pondy Bazaar for palazzos and pants.",
+      "10 out of 10 experience—unmatched comfort and quality elastic waistbands!",
+      "Highly recommended for anyone searching for comfortable, breathable leggings in Chennai.",
+      "Definitely coming back to grab a few more color options in straight cotton pants!",
+      "Super satisfied with the stitching and fabric—a must-visit shop in T. Nagar!",
+      "Hands down one of the most reliable stores in Pondy Bazaar for ladies' bottom wear.",
+      "Great pricing and long-lasting fabric—I'll certainly be back for more shopping.",
+      "A complete 10/10 shopping spot for all types of daily-wear cotton trousers and pants.",
+      "Will definitely recommend Sri Chintamani to anyone looking for gentle, non-irritating bottom wear!"
+    ],
+    "nightwear": [
+      "Sri Chintamani is now my first choice in Pondy Bazaar for pure cotton nightwear!",
+      "Will definitely visit again to buy more soft loungewear and nightsuits.",
+      "10 out of 10 experience—the softest and most breathable sleepwear in T. Nagar!",
+      "Highly recommended for anyone looking for gentle, skin-friendly nighties in Chennai.",
+      "Definitely coming back for more cozy home wear sets—super happy with my purchase!",
+      "Hands down the best store in Pondy Bazaar for lightweight, durable cotton nightwear.",
+      "A 10/10 store if you prioritize comfort and quality in daily home wear.",
+      "Super comfortable fits and great durability—I'll be back for more items soon!",
+      "Will certainly recommend Sri Chintamani to friends and family for pure cotton nightwear.",
+      "Easily one of the most reliable shops in Chennai for cozy, long-lasting sleepwear!"
+    ],
+    "bedsheets": [
+      "Super happy with the bed sheet quality—will definitely be shopping here again.",
+      "Excellent variety and comfort. Sri Chintamani is now my go-to for home linens!",
+      "Great fabric quality and reasonable pricing. Definitely worth repeated visits.",
+      "10 out of 10 experience—my top recommendation for premium bedding in Pondy Bazaar!",
+      "Will definitely visit again to pick up more 100% pure cotton bedsheets.",
+      "Highly recommended if you want breathable, long-lasting bedsheets in Chennai!",
+      "A fantastic store with top-class bedspreads—I'll definitely be back for more home setup items.",
+      "Vibrant prints that hold up after washes—easily one of the best home textile shops in T. Nagar.",
+      "A 10/10 shopping destination for high thread-count, soft cotton bed linens.",
+      "Definitely coming back with family to check out their new bedsheet collection!"
+    ],
+    "towels-linen": [
+      "Will definitely visit again for quality bath linens and towels.",
+      "Highly recommended if you're looking for durable, skin-friendly linens in Chennai!",
+      "A fantastic store with great value—I'll be back for more home setup items.",
+      "10 out of 10 experience—my go-to home and bath collection store in Pondy Bazaar!",
+      "Super happy with the absorbency and softness of their towels—will shop here again!",
+      "Sri Chintamani is now my preferred place in T. Nagar for household cotton linen.",
+      "Great quality edge stitching and soft plush cotton—definitely worth repeated visits.",
+      "Hands down one of the best selections of bath and hand towels in Pondy Bazaar.",
+      "A complete 10/10 spot for quick-drying, durable bath linens.",
+      "Will certainly recommend Sri Chintamani to anyone setting up their home essentials!"
+    ],
+    "general": [
+      "Highly recommended for anyone shopping at Pondy Bazaar, Chennai!",
+      "Will definitely visit Sri Chintamani at Pondy Bazaar, Chennai again!",
+      "Easily one of the best shops in Pondy Bazaar for quality and variety.",
+      "Definitely coming back again with friends and family!",
+      "10 out of 10 experience—definitely my top recommendation in Pondy Bazaar!",
+      "Sri Chintamani remains my personal favorite shopping spot in T. Nagar, Chennai.",
+      "A complete 10/10 store for pure cotton garments and home fabrics under one roof.",
+      "Super satisfied with my visit today—I'll be recommending this place to everyone!",
+      "Always a seamless and pleasant shopping experience at Sri Chintamani.",
+      "Without a doubt, one of the finest and most trusted retail shops in Pondy Bazaar!"
+    ],
+    "default": [
+      "Highly recommended for anyone shopping at Pondy Bazaar, Chennai!",
+      "Will definitely visit Sri Chintamani at Pondy Bazaar, Chennai again!",
+      "Easily one of the best shops in Pondy Bazaar for quality and variety.",
+      "Definitely coming back again with friends and family!",
+      "10 out of 10 experience—definitely my top recommendation in Pondy Bazaar!",
+      "A top-rated shopping spot in Pondy Bazaar for authentic cotton items.",
+      "Super happy with my purchase—I'll definitely be back for more shopping soon!",
+      "Hands down one of the best shopping experiences in T. Nagar, Chennai.",
+      "A complete 10/10 store with excellent service and authentic collections.",
+      "Will certainly visit Sri Chintamani again on my next trip to Pondy Bazaar!"
+    ]
+  };
+
 
   let currentReview = "";
 
@@ -243,7 +337,9 @@
     const Part2 = getRandomItem(itemDetails[cat]);
     const Part3 = getRandomItem(serviceRemarks);
     const Part4 = getRandomItem(valueRemarks);
-    const Part5 = getRandomItem(closings);
+        const selectedClosings = categoryClosings[cat] || categoryClosings.default;
+    const Part5 = getRandomItem(selectedClosings);
+
 
     currentReview = `${Part1} ${Part2} ${Part3} ${Part4} ${Part5}`;
     document.getElementById("reviewOutput").innerText = `"${currentReview}"`;
