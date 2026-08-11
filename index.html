@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Chintamani - Leave a Review</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #faf8f5; margin: 0; padding: 20px; text-align: center; color: #2c2c2c; }
+    .card { background: #ffffff; border-radius: 16px; padding: 24px; max-width: 420px; margin: auto; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #eae2d6; }
+    h2 { margin-top: 0; color: #8b0000; font-size: 22px; }
+    p { font-size: 14px; color: #555; margin-bottom: 20px; }
+    label { font-weight: bold; font-size: 13px; display: block; text-align: left; margin-top: 12px; color: #444; }
+    select, button { width: 100%; padding: 13px; margin-top: 8px; border-radius: 8px; border: 1px solid #ccc; font-size: 15px; box-sizing: border-box; }
+    button { background-color: #8b0000; color: white; border: none; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    button:hover { background-color: #6b0000; }
+    .review-box { background: #fdfbf7; border: 1px dashed #8b0000; padding: 14px; border-radius: 8px; margin-top: 16px; font-style: italic; min-height: 80px; text-align: left; font-size: 14px; color: #333; line-height: 1.5; }
+    .copy-btn { background-color: #2e7d32; margin-top: 16px; display: none; }
+    .copy-btn:hover { background-color: #1b5e20; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Sri Chintamani</h2>
+  <p>Thank you for shopping with us! Tap below to generate a unique 5-star review for your visit.</p>
+
+  <label for="category">What did you shop for today?</label>
+  <select id="category">
+    <option value="sarees">Sarees & Silk Collection</option>
+    <option value="ethnic">Ethnic & Bridal Wear</option>
+    <option value="dress">Dress Materials & Suits</option>
+    <option value="general">Overall Shopping Experience</option>
+  </select>
+
+  <button onclick="generateUniqueReview()">✨ Generate AI Review</button>
+
+  <div class="review-box" id="reviewOutput">Your unique generated review will appear here...</div>
+
+  <button id="copyBtn" class="copy-btn" onclick="copyAndRedirect()">📋 Copy Review & Open Google</button>
+</div>
+
+<script>
+  // YOUR OFFICIAL SRI CHINTAMANI GOOGLE REVIEW URL
+  const GOOGLE_REVIEW_URL = "https://g.page/r/CQOeoNe6qCEAEAE/review";
+
+  const openings = [
+    "Had a wonderful shopping experience at Sri Chintamani!",
+    "Visited Sri Chintamani today and I'm super impressed!",
+    "Sri Chintamani never disappoints when it comes to women's wear.",
+    "Absolutely loved my visit to Sri Chintamani!",
+    "Shopping at Sri Chintamani was such a smooth and pleasant experience.",
+    "Found exactly what I was looking for at Sri Chintamani!",
+    "Sri Chintamani has one of the finest clothing collections in Pondy Bazaar."
+  ];
+
+  const itemDetails = {
+    sarees: [
+      "The saree collection is gorgeous with stunning color combinations and rich fabrics.",
+      "Their silk sarees and casual saree range offer incredible quality and elegance.",
+      "The texture and design of the sarees here are top-tier.",
+      "Huge variety in silk sarees, party wear, and soft silks with a modern touch."
+    ],
+    ethnic: [
+      "The ethnic wear and bridal collection is breathtaking with super fine craftsmanship.",
+      "Loved their traditional outfits—the grand designs and fitting are perfect.",
+      "Their festive wear collection has rich patterns and premium finishing.",
+      "Great variety of grand outfits and festive wear for special occasions."
+    ],
+    dress: [
+      "The collection of dress materials and unstitched suits is modern and vibrant.",
+      "High quality fabrics with unique embroidery and lovely shades.",
+      "Great range of cotton, silk mix, and printed dress materials.",
+      "Very soft fabric quality and vibrant prints in suit materials."
+    ],
+    general: [
+      "The overall variety in women's wear is impressive with choices for all age groups.",
+      "The store is very clean, organized, and stocked with fresh trendy stock.",
+      "Excellent display of women's fashion outfits at fair prices.",
+      "Superb quality clothing with plenty of options to pick from."
+    ]
+  };
+
+  const serviceRemarks = [
+    "The staff was warm, courteous, and showed options with great patience.",
+    "Staff members were extremely helpful and guided us to pick the right match.",
+    "Prompt service and very humble management.",
+    "The staff was attentive and made shopping comfortable and easy."
+  ];
+
+  const valueRemarks = [
+    "Pricing is completely reasonable for the high quality they offer.",
+    "Definite value for money given the premium fabric quality.",
+    "Fair pricing and superb customer care.",
+    "High standard quality across all price ranges."
+  ];
+
+  const closings = [
+    "Highly recommended for anyone shopping in the area!",
+    "Will definitely visit again for my future shopping!",
+    "A 10/10 store for women's clothing in T. Nagar!",
+    "Definitely coming back again with friends and family!",
+    "Must-visit spot for women's traditional and ethnic wear!"
+  ];
+
+  let currentReview = "";
+
+  function getRandomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function generateUniqueReview() {
+    const cat = document.getElementById("category").value;
+
+    const Part1 = getRandomItem(openings);
+    const Part2 = getRandomItem(itemDetails[cat]);
+    const Part3 = getRandomItem(serviceRemarks);
+    const Part4 = getRandomItem(valueRemarks);
+    const Part5 = getRandomItem(closings);
+
+    currentReview = `${Part1} ${Part2} ${Part3} ${Part4} ${Part5}`;
+    document.getElementById("reviewOutput").innerText = `"${currentReview}"`;
+    document.getElementById("copyBtn").style.display = "block";
+  }
+
+  function copyAndRedirect() {
+    if (!currentReview) return;
+
+    navigator.clipboard.writeText(currentReview).then(() => {
+      alert("Review copied! Simply paste it in the Google review box.");
+      window.location.href = GOOGLE_REVIEW_URL;
+    }).catch(() => {
+      window.location.href = GOOGLE_REVIEW_URL;
+    });
+  }
+</script>
+
+</body>
+</html>
